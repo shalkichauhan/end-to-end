@@ -36,3 +36,10 @@ export type UserData = {
     email:string,
     _originalEmail:string
 }[]
+
+export type ObjCreation=
+    {
+        firstName:string,
+        middleName:string,
+        role:string
+    }

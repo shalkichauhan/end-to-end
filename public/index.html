@@ -55,39 +55,26 @@
 
 <div class="container">
     <h1>Text Area, Submit Button, and 2x2 Table</h1>
-    <form onsubmit="return handleSubmit();">
+    <form onsubmit="handleSubmit(); return false;">
         <label for="textarea">Enter Text:</label>
         <textarea id="textarea" name="textarea"></textarea>
         <button type="submit">Submit</button>
     </form>
-    <table>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-        <tr>
-            <td>Row 1, Cell 1</td>
-            <td>Row 1, Cell 2</td>
-        </tr>
-        <tr>
-            <td>Row 2, Cell 1</td>
-            <td>Row 2, Cell 2</td>
-        </tr>
-    </table>
+    <div id="table-container"></div>
 </div>
 
 <script>
     async function handleSubmit() {
         const textareaValue = document.getElementById('textarea').value;
 
-        await fetch('/userData',{
+       const data= await fetch('/userData',{
             method:'POST',
             headers:{
                 'content-type': 'application/json'
              },
             body: JSON.stringify({userData:textareaValue})
         })
-
+    console.log(await data.json())
 
     }
 </script>

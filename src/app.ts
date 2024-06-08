@@ -12,6 +12,7 @@ app.use(express.json())
 
 app.post('/userData', async (req: Request, res: any) => {
     const data = await requestHandler(req.body)
+    res.send(data)
 })
 
 app.listen(3000, () => {

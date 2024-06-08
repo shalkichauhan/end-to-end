@@ -55,7 +55,7 @@
 
 <div class="container">
     <h1>Text Area, Submit Button, and 2x2 Table</h1>
-    <form>
+    <form onsubmit="return handleSubmit();">
         <label for="textarea">Enter Text:</label>
         <textarea id="textarea" name="textarea"></textarea>
         <button type="submit">Submit</button>
@@ -75,6 +75,14 @@
         </tr>
     </table>
 </div>
+
+<script>
+    function handleSubmit() {
+        const textareaValue = document.getElementById('textarea').value;
+        console.log(textareaValue);
+        return false
+    }
+</script>
 
 </body>
 </html>

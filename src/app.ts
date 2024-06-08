@@ -2,7 +2,7 @@ const express = require('express')
 const app=express();
 
 const path = require('path')
-const pathJoin= path.join(__dirname,'/public')
+const pathJoin= path.join(__dirname,'../public')
 
 app.use(express.static(pathJoin))
 app.use(express.json())

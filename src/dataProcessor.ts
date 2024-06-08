@@ -1,6 +1,6 @@
 import {ObjCreation, UserData} from "./type";
 
-export function dataProcessor(data:UserData) {
+export function dataProcessor(data:UserData):ObjCreation[] {
     //iterate
     let objectOfInfo:ObjCreation
     let arr = []
@@ -13,4 +13,5 @@ export function dataProcessor(data:UserData) {
         }
         arr.push(objectOfInfo)
     }
+    return arr
 }

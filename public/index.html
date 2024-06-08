@@ -77,10 +77,18 @@
 </div>
 
 <script>
-    function handleSubmit() {
+    async function handleSubmit() {
         const textareaValue = document.getElementById('textarea').value;
-        console.log(textareaValue);
-        return false
+
+        await fetch('/userData',{
+            method:'POST',
+            headers:{
+                'content-type': 'application/json'
+             },
+            body: JSON.stringify({userData:textareaValue})
+        })
+
+
     }
 </script>
 
